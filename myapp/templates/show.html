@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-striped">
+    
+    <tr>
+    <th>ID</td>
+    <th>Name</td>
+    <th>Email</td>
+    <th>Contact</td>
+    </tr>
+
+    {% for i in student %}
+    <tr>
+        <td>{{i.sid}}</td>
+        <td>{{i.sname}}</td>
+        <td>{{i.semail}}</td>
+        <td>{{i.scontact}}</td>
+        <td>
+            <a href="edit/{{i.id}}">Edit</a>
+        </td>
+        <td>
+            <a href="delete/{{i.id}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
